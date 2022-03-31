@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="49331" started-at="2022-03-31T12:07:52 IST" finished-at="2022-03-31T12:08:41 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="49331" started-at="2022-03-31T12:07:52 IST" finished-at="2022-03-31T12:08:41 IST">
+      <class name="com.popup.test.PopUpTestIII">
+        <test-method status="PASS" signature="launchbrowser()[pri:0, instance:com.popup.test.PopUpTestIII@7a1ebcd8]" name="launchbrowser" is-config="true" duration-ms="44099" started-at="2022-03-31T12:07:52 IST" finished-at="2022-03-31T12:08:36 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchbrowser -->
+        <test-method status="PASS" signature="popup()[pri:0, instance:com.popup.test.PopUpTestIII@7a1ebcd8]" name="popup" duration-ms="5048" started-at="2022-03-31T12:08:36 IST" finished-at="2022-03-31T12:08:41 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- popup -->
+        <test-method status="PASS" signature="closebrowser()[pri:0, instance:com.popup.test.PopUpTestIII@7a1ebcd8]" name="closebrowser" is-config="true" duration-ms="1" started-at="2022-03-31T12:08:41 IST" finished-at="2022-03-31T12:08:41 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closebrowser -->
+      </class> <!-- com.popup.test.PopUpTestIII -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
