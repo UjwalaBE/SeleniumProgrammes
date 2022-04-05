@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.link.test.ImglinkTest">
+      <class name="com.selMiscellaneous.test.WebTableOperations">
         <methods>
           <include name="launchbrowser"/>
-          <include name="closebrowser"/>
-          <include name="linktestest"/>
+          <include name="tableCols"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.link.test.ImglinkTest -->
+      </class> <!-- com.selMiscellaneous.test.WebTableOperations -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

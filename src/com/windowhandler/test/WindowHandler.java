@@ -1,6 +1,5 @@
-package com.popup.test;
+package com.windowhandler.test;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,16 +7,12 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class PopUpTestIII {
-
+public class WindowHandler {
 	
 	
 	
 	
 	
-
-	
-
 	WebDriver driver;
 	
 	 
@@ -34,49 +29,41 @@ public class PopUpTestIII {
 	   
 		driver.manage().deleteAllCookies();
 		
-	  	driver.get("https://nxtgenaiacademy.com/alertandpopup/");
+		driver.get("http://magnus.jalaacademy.com/Account/Login");
 		
 		
-	}  
+	}
 	
 	
-	
-	
-	@Test
-	public void popup() throws InterruptedException {
+	@Test()
+	public void login() {
 		
+		driver.findElement(By.id("UserName")).sendKeys("training@jalaacademy.com");
 		
-	driver.findElement(By.name("promptalertbox1234")).click();
+	    driver.findElement(By.name("Password")).sendKeys("jobprogram");
 		
-		  
-	Alert aler= driver.switchTo().alert();
-	
-	
-	Thread.sleep(2000);
-	
-	
-	
-	aler.sendKeys("Yes");
-	
-	Thread.sleep(2000);
-	
-	//aler.accept();
-	
-	
-
-		
-		
+	    driver.findElement(By.id("btnLogin")).click();
 		}
-
+	
+	
+	@Test()
+	
+	public void homepage() {
+		
+		login();
+		
+		 driver.findElement(By.linkText("Admin Login")).click();
+	}
 
 	
 	@AfterMethod
 	
 	public void closebrowser() {
-		
-		//driver.close();
+		 
+		driver.close();
 		
 		
 	}
-	
+
+
 }

@@ -1,25 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="49331" started-at="2022-03-31T12:07:52 IST" finished-at="2022-03-31T12:08:41 IST">
+  <suite name="Default suite" duration-ms="35537" started-at="2022-04-05T20:58:40 IST" finished-at="2022-04-05T20:59:15 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="49331" started-at="2022-03-31T12:07:52 IST" finished-at="2022-03-31T12:08:41 IST">
-      <class name="com.popup.test.PopUpTestIII">
-        <test-method status="PASS" signature="launchbrowser()[pri:0, instance:com.popup.test.PopUpTestIII@7a1ebcd8]" name="launchbrowser" is-config="true" duration-ms="44099" started-at="2022-03-31T12:07:52 IST" finished-at="2022-03-31T12:08:36 IST">
+    <test name="Default test" duration-ms="35537" started-at="2022-04-05T20:58:40 IST" finished-at="2022-04-05T20:59:15 IST">
+      <class name="com.selMiscellaneous.test.WebTableOperations">
+        <test-method status="PASS" signature="launchbrowser()[pri:0, instance:com.selMiscellaneous.test.WebTableOperations@4232c52b]" name="launchbrowser" is-config="true" duration-ms="14463" started-at="2022-04-05T20:58:40 IST" finished-at="2022-04-05T20:58:54 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchbrowser -->
-        <test-method status="PASS" signature="popup()[pri:0, instance:com.popup.test.PopUpTestIII@7a1ebcd8]" name="popup" duration-ms="5048" started-at="2022-03-31T12:08:36 IST" finished-at="2022-03-31T12:08:41 IST">
+        <test-method status="PASS" signature="tableRows()[pri:1, instance:com.selMiscellaneous.test.WebTableOperations@4232c52b]" name="tableRows" duration-ms="364" started-at="2022-04-05T20:58:54 IST" finished-at="2022-04-05T20:58:55 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- popup -->
-        <test-method status="PASS" signature="closebrowser()[pri:0, instance:com.popup.test.PopUpTestIII@7a1ebcd8]" name="closebrowser" is-config="true" duration-ms="1" started-at="2022-03-31T12:08:41 IST" finished-at="2022-03-31T12:08:41 IST">
+        </test-method> <!-- tableRows -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.selMiscellaneous.test.WebTableOperations@4232c52b]" name="tearDown" is-config="true" duration-ms="1135" started-at="2022-04-05T20:58:55 IST" finished-at="2022-04-05T20:58:56 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closebrowser -->
-      </class> <!-- com.popup.test.PopUpTestIII -->
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="launchbrowser()[pri:0, instance:com.selMiscellaneous.test.WebTableOperations@4232c52b]" name="launchbrowser" is-config="true" duration-ms="7762" started-at="2022-04-05T20:58:56 IST" finished-at="2022-04-05T20:59:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchbrowser -->
+        <test-method status="PASS" signature="tableCols()[pri:2, instance:com.selMiscellaneous.test.WebTableOperations@4232c52b]" name="tableCols" duration-ms="90" started-at="2022-04-05T20:59:04 IST" finished-at="2022-04-05T20:59:04 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tableCols -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.selMiscellaneous.test.WebTableOperations@4232c52b]" name="tearDown" is-config="true" duration-ms="954" started-at="2022-04-05T20:59:04 IST" finished-at="2022-04-05T20:59:05 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="launchbrowser()[pri:0, instance:com.selMiscellaneous.test.WebTableOperations@4232c52b]" name="launchbrowser" is-config="true" duration-ms="7814" started-at="2022-04-05T20:59:05 IST" finished-at="2022-04-05T20:59:12 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchbrowser -->
+        <test-method status="PASS" signature="getdata()[pri:3, instance:com.selMiscellaneous.test.WebTableOperations@4232c52b]" name="getdata" duration-ms="1531" started-at="2022-04-05T20:59:12 IST" finished-at="2022-04-05T20:59:14 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getdata -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.selMiscellaneous.test.WebTableOperations@4232c52b]" name="tearDown" is-config="true" duration-ms="1313" started-at="2022-04-05T20:59:14 IST" finished-at="2022-04-05T20:59:15 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.selMiscellaneous.test.WebTableOperations -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

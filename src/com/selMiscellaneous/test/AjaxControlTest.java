@@ -1,15 +1,16 @@
-package com.dropdown.test;
+   package com.selMiscellaneous.test;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class DropDownIII {
+public class AjaxControlTest {
+	
 	
 	WebDriver driver;
 	
@@ -27,42 +28,36 @@ public class DropDownIII {
 	   
 		driver.manage().deleteAllCookies();
 		
-		driver.get("https://theautomationzone.blogspot.com/2020/07/basic-dropdown.html");
+		driver.get("https://www.google.co.in/");
 		
 		
 	}  
 	
 	
 	
-	
-	@Test
-	public void radioOp() {
+	@Test()
 		
+		public void ajaxAutoSuggest() throws InterruptedException {
 		
-		WebElement ele=	driver.findElement(By.id("mySelect"));
+		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("selenium");
 		
-		Select sel=new Select(ele);
+		Thread.sleep(2000);
+		String str=driver.findElement(By.xpath("//body/div[1]/div[3]/form[1]/div[1]/div[1]/div[2]/div[2]/div[2]/ul[1]/div[1]/ul[1]")).getText();
 		
-		sel.selectByValue("orange");
-		
-		
-		
-		
-		}
-	
-
-	
-	@AfterMethod
-	
-	public void closebrowser() {
-		
-		//driver.close();
+		System.out.println(str);
 		
 		
 	}
 	
 	
+	@AfterMethod
 	
+	public void tearDown() {
+		
+		driver.quit();
+	}
+	
+
 	
 
 }

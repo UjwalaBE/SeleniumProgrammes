@@ -1,15 +1,16 @@
-package com.dropdown.test;
+package com.actions.test;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class DropDownIII {
+public class DoubleClickTest {
+	
 	
 	WebDriver driver;
 	
@@ -27,7 +28,7 @@ public class DropDownIII {
 	   
 		driver.manage().deleteAllCookies();
 		
-		driver.get("https://theautomationzone.blogspot.com/2020/07/basic-dropdown.html");
+		driver.get("https://demoqa.com/buttons");
 		
 		
 	}  
@@ -35,33 +36,27 @@ public class DropDownIII {
 	
 	
 	
-	@Test
-	public void radioOp() {
+	@Test()
 		
+		public void doubleClickEvent() {
 		
-		WebElement ele=	driver.findElement(By.id("mySelect"));
+		WebElement ele=driver.findElement(By.xpath("//button[@id='doubleClickBtn']"));
 		
-		Select sel=new Select(ele);
+		Actions act=new Actions(driver);                 
 		
-		sel.selectByValue("orange");
-		
-		
-		
-		
-		}
-	
-
-	
-	@AfterMethod
-	
-	public void closebrowser() {
-		
-		//driver.close();
-		
+		act.doubleClick(ele).perform();
 		
 	}
 	
 	
+	@AfterMethod
+	
+	public void tearDown() {
+		
+		driver.quit();
+	}
+	
+
 	
 	
 
