@@ -26,9 +26,9 @@ public class DoubleClickTest {
 		
 		driver.manage().window().maximize();
 	   
-		driver.manage().deleteAllCookies();
+		driver.manage().deleteAllCookies();        
 		
-		driver.get("https://demoqa.com/buttons");
+		driver.get("http://magnus.jalaacademy.com/Account/Login");
 		
 		
 	}  
@@ -38,13 +38,27 @@ public class DoubleClickTest {
 	
 	@Test()
 		
-		public void doubleClickEvent() {
+		public void doubleClickEvent() throws InterruptedException {
+		
+		
+		driver.findElement(By.id("UserName")).sendKeys("training@jalaacademy.com");
+
+		driver.findElement(By.name("Password")).sendKeys("jobprogram");
+
+		driver.findElement(By.id("btnLogin")).click();
+
+		Thread.sleep(2000);
+
+		driver.findElement(By.linkText("More")).click();
+
+		Thread.sleep(1000);
+
 		
 		WebElement ele=driver.findElement(By.xpath("//button[@id='doubleClickBtn']"));
 		
 		Actions act=new Actions(driver);                 
 		
-		act.doubleClick(ele).perform();
+		act.doubleClick(ele).perform();  
 		
 	}
 	

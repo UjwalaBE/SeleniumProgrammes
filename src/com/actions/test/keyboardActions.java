@@ -35,7 +35,7 @@ public class keyboardActions {
 	   
 		driver.manage().deleteAllCookies();
 		
-		driver.get("https://www.facebook.com/");
+		driver.get("http://magnus.jalaacademy.com/Account/Login");
 		
 		
 	}  
@@ -43,36 +43,20 @@ public class keyboardActions {
 	
 	
 	
-	@Test(priority=1)
-	
-	public void keyboardActionTest() {
-		
-		Actions act=new Actions(driver);
-		
-		act.sendKeys(Keys.ENTER).perform();
-		
-		
-		
-	}
 	
 	
-	@Test(priority=2)
+	@Test()
 	
 	   void tabPressAction() throws InterruptedException {
 		
-		driver.findElement(By.xpath("//a[text()='Create New Account']")).click();
-		
-		Thread.sleep(2000);
-		
-		driver.findElement(By.name("firstname")).sendKeys("ujjwal");
+		driver.findElement(By.id("UserName")).sendKeys("training@jalaacademy.com");
+
 		
 		Actions at=new Actions(driver);
 		at.sendKeys(Keys.TAB)
-		.sendKeys("bachche")
-		.sendKeys(Keys.TAB)
-		.sendKeys("123456789")
-		.sendKeys(Keys.TAB)
-		.sendKeys("11445522")
+		.sendKeys("jobprogram")
+		
+	
 		.build().perform();
 		
 		
@@ -87,7 +71,7 @@ public class keyboardActions {
 	
 	public void closebrowser() {
 		
-		driver.close();
+		//driver.close();
 		
 		
 	}

@@ -17,7 +17,7 @@ public class ElementLocatorII {
 	public void launchbrowser() {
 		
 
-		System.setProperty("webdriver.chrome.driver","C:\\C\\admin\\eclipse\\eclipse-java-2021-06-R-win32-x86_64\\chromedriver(1).exe");
+		System.setProperty("webdriver.chrome.driver","C:\\C\\admin\\eclipse\\eclipse-java-2021-06-R-win32-x86_64\\chromedriver(2).exe");
 		
 		 driver=new ChromeDriver();
 		
@@ -25,7 +25,7 @@ public class ElementLocatorII {
 	   
 		driver.manage().deleteAllCookies();
 		
-		driver.get("https://www.facebook.com/");
+		driver.get("http://magnus.jalaacademy.com");
 		
 		
 	}
@@ -34,11 +34,11 @@ public class ElementLocatorII {
 	@Test
 	public void locatortest() {
 		
-		driver.findElement(By.id("email")).sendKeys("ujjwal@gmil.com");
+		driver.findElement(By.id("UserName")).sendKeys("training@jalaacademy.com");
 		
-		driver.findElement(By.cssSelector("#pass")).sendKeys("test@123");
+		driver.findElement(By.cssSelector("#Password")).sendKeys("jobprogram");
 		
-		driver.findElement(By.className("_42ft _4jy0 _6lth _4jy6 _4jy1 selected _51sy")).click(); //failed bcoz class name is not unique
+		driver.findElement(By.className("_btn btn-primary btn-flat")).click(); //failed bcoz class name is not unique  ...
 		
 		
 		}

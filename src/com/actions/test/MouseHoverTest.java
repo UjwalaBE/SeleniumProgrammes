@@ -29,7 +29,7 @@ public class MouseHoverTest {
 	   
 		driver.manage().deleteAllCookies();
 		
-		driver.get("https://demoqa.com/menu/");
+		driver.get("http://magnus.jalaacademy.com/Account/Login");
 		
 		
 	}  
@@ -39,13 +39,29 @@ public class MouseHoverTest {
 	
 	@Test()
 		
-		public void mousehoverEvent() {
+		public void mousehoverEvent() throws InterruptedException {
 		
-		WebElement ele=driver.findElement(By.linkText("Main Item 2"));
+		driver.findElement(By.id("UserName")).sendKeys("training@jalaacademy.com");
+
+		driver.findElement(By.name("Password")).sendKeys("jobprogram");
+
+		driver.findElement(By.id("btnLogin")).click();
+
+		Thread.sleep(2000);
 		
-		Actions act=new Actions(driver);                 
 		
-		act.moveToElement(ele).perform();  
+
+		driver.findElement(By.linkText("More")).click();
+
+		Thread.sleep(1000);
+		
+		 WebElement tr=driver.findElement(By.linkText("Slider"));
+		
+		Actions act=new Actions(driver);
+		
+		act.moveToElement(tr).perform();
+		
+
 		
 	}
 	
@@ -54,7 +70,7 @@ public class MouseHoverTest {
 	
 	public void tearDown() {
 		
-		driver.quit();
+		//driver.quit();
 	}
 	
 

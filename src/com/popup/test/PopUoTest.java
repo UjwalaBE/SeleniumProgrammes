@@ -10,68 +10,61 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class PopUoTest {
-	
+
 	WebDriver driver;
-	
-	 
+
 	@BeforeMethod
-	
+
 	public void launchbrowser() {
-		
 
-		System.setProperty("webdriver.chrome.driver","C:\\C\\admin\\eclipse\\eclipse-java-2021-06-R-win32-x86_64\\chromedriver(1).exe");
-		
-		 driver=new ChromeDriver();
-		
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\C\\admin\\eclipse\\eclipse-java-2021-06-R-win32-x86_64\\chromedriver(2).exe");
+
+		driver = new ChromeDriver();
+
 		driver.manage().window().maximize();
-	   
+
 		driver.manage().deleteAllCookies();
-		
-	  	driver.get("https://nxtgenaiacademy.com/alertandpopup/");
-		
-		
-	}  
-	
-	
-	
-	
-	@Test
-	public void popup() {
-		
-		
-		driver.findElement(By.name("alertbox")).click();
-		
-		
-	Alert aler= driver.switchTo().alert();
-	
-	System.out.println(aler.getText());
-	
-	aler.accept();
-	
-	
-		
 
-		
-		
-		}
+		driver.get("http://magnus.jalaacademy.com/Account/Login");
 
-
-	
-	@AfterMethod
-	
-	public void closebrowser() {
-		
-		//driver.close();
-		
-		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
+	@Test
+	public void popup() throws InterruptedException {
+
+		driver.findElement(By.id("UserName")).sendKeys("training@jalaacademy.com");
+
+		driver.findElement(By.name("Password")).sendKeys("jobprogram");
+
+		driver.findElement(By.id("btnLogin")).click();
+
+		Thread.sleep(2000);
+
+		driver.findElement(By.linkText("More")).click();
+
+		Thread.sleep(2000);
+
+		driver.findElement(By.linkText("Popups")).click();
+
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("//input[@type='button'and @name='alert']")).click();
+
+		Alert aler = driver.switchTo().alert();
+
+		System.out.println(aler.getText());
+
+		aler.accept();
+
+	}
+
+	@AfterMethod
+
+	public void closebrowser() {
+
+		// driver.close();
+
+	}
 
 }

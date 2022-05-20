@@ -29,7 +29,7 @@ public class PopUpTestII {
 	   
 		driver.manage().deleteAllCookies();
 		
-	  	driver.get("https://nxtgenaiacademy.com/alertandpopup/");
+	  	driver.get("http://magnus.jalaacademy.com/Account/Login");
 		
 		
 	}  
@@ -38,20 +38,33 @@ public class PopUpTestII {
 	
 	
 	@Test
-	public void popup() {
+	public void popupConfirm() throws InterruptedException {
 		
-		
-		driver.findElement(By.name("confirmalertbox")).click();
-		
-		
-	Alert aler= driver.switchTo().alert();
-	
-	
-	
-	aler.accept();
-	
-	//aler.dismiss();
-		
+		driver.findElement(By.id("UserName")).sendKeys("training@jalaacademy.com");
+
+		driver.findElement(By.name("Password")).sendKeys("jobprogram");
+
+		driver.findElement(By.id("btnLogin")).click();
+
+		Thread.sleep(2000);
+
+		driver.findElement(By.linkText("More")).click();
+
+		Thread.sleep(2000);
+
+		driver.findElement(By.linkText("Popups")).click();
+
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("//input[@type='button'and @name='confirm']")).click();
+
+		Alert alert = driver.switchTo().alert();
+
+		System.out.println(alert.getText());
+
+		alert.dismiss();
+
+		//alert.accept();
 
 		
 		

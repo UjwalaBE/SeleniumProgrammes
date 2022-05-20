@@ -1,3 +1,6 @@
+
+
+
 package com.actions.test;
 
 import org.openqa.selenium.By;
@@ -28,6 +31,8 @@ public class DragAndDropTest {
 	   
 		driver.manage().deleteAllCookies();
 		
+		driver.get("http://magnus.jalaacademy.com/Account/Login");
+		
 		
 		
 		
@@ -36,42 +41,37 @@ public class DragAndDropTest {
 	
 	
 	
-	@Test(enabled=false)
-		
-		public void dragAndDropdevent() throws InterruptedException {
-		
-		driver.switchTo().frame(0);
-		
-		Thread.sleep(2000);
-		
-		WebElement src=driver.findElement(By.xpath("//*[@id='draggable']"));
-		
-		Thread.sleep(2000);
-		
-		WebElement dest =driver.findElement(By.xpath("//*[@id='droppable']"));
-		
-		Actions act=new Actions(driver);                 // Create an object of actions class and pass reference of WebDriver as a parameter to its constructor. 
-		
-		act.dragAndDrop(src, dest).pause(2).perform();/// Move the cursor and perform drag and drop action
-		
-		
-		Thread.sleep(2000);
-	}
 	
 	
 	@Test()
 	
 	public void dragAnddrop() throws InterruptedException {
 		
-		driver.get("https://jqueryui.com/draggable/");
+		driver.findElement(By.id("UserName")).sendKeys("training@jalaacademy.com");
+
+		driver.findElement(By.name("Password")).sendKeys("jobprogram");
+
+		driver.findElement(By.id("btnLogin")).click();
+
+		Thread.sleep(2000);
+
+		driver.findElement(By.linkText("More")).click();
+
+		Thread.sleep(1000);
+
+		driver.findElement(By.linkText("Slider")).click();
+		Thread.sleep(1000);
+
+		WebElement w1=driver.findElement(By.xpath("//div[@id='blue']/child::div[1]/descendant::div[1]"));
 		
-		driver.switchTo().frame(0);
+		WebElement w2=driver.findElement(By.xpath("//div[@id='blue']/child::div[1]/descendant::div[4]"));
 		
 		Actions act=new Actions(driver);
 		
 		Thread.sleep(2000);
 		
-		act.clickAndHold(driver.findElement(By.xpath("//*[@id='draggable']"))).moveToElement(driver.findElement(By.cssSelector("div[id='droppable']")))
+		act.clickAndHold(w1).moveToElement(w2)
+		
 		.release().build().perform();
 		
 		
@@ -89,7 +89,7 @@ public class DragAndDropTest {
 	
 	public void tearDown() {
 		
-		driver.quit();
+		//driver.quit();
 	}
 	
 

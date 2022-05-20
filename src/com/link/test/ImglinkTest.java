@@ -11,64 +11,61 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class ImglinkTest {
-	
-	
-	
+
 	WebDriver driver;
-	
-	 
+
 	@BeforeMethod
-	
+
 	public void launchbrowser() {
-		
 
-		System.setProperty("webdriver.chrome.driver","C:\\C\\admin\\eclipse\\eclipse-java-2021-06-R-win32-x86_64\\chromedriver(1).exe");
-		
-		 driver=new ChromeDriver();
-		
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\C\\admin\\eclipse\\eclipse-java-2021-06-R-win32-x86_64\\chromedriver(2).exe");
+
+		driver = new ChromeDriver();
+
 		driver.manage().window().maximize();
-	   
+
 		driver.manage().deleteAllCookies();
-		
-	  	driver.get("https://developers.google.com/speed/webp/gallery");
-		
-		
-	}  
-	
-	
-	
-	
-	@Test
-	public void linktestest() {
-		
-		
-	WebElement img=	driver.findElement(By.xpath("//img[@src='https://www.gstatic.com/webp/gallery3/1.sm.png']"));
-	
-	img.click();
-	
-	System.out.println(img.getAttribute("src"));
-			 
-		
 
-		
-		
-		}
+		driver.get("http://magnus.jalaacademy.com/Account/Login");
 
-
-	
-	@AfterMethod
-	
-	public void closebrowser() {
-		
-		//driver.close();
-		
-		
 	}
-	
-	
-	
-	
-	
-	
+
+	@Test
+	public void linktestest() throws InterruptedException {
+
+		driver.findElement(By.id("UserName")).sendKeys("training@jalaacademy.com");
+
+		driver.findElement(By.name("Password")).sendKeys("jobprogram");
+
+		driver.findElement(By.id("btnLogin")).click();
+
+		Thread.sleep(2000);
+
+		driver.findElement(By.linkText("More")).click();
+
+		Thread.sleep(2000);
+
+		driver.findElement(By.linkText("Links")).click();
+		
+		Thread.sleep(2000);
+		
+		driver.findElement(By.linkText("Image Links")).click();
+
+		WebElement img = driver.findElement(By.xpath("//div[@id='tab_3']//a[@href='http://jalatechnologies.com/']"));
+		
+		img.click();
+
+		System.out.println(img.getAttribute("href"));
+
+	}
+
+	@AfterMethod
+
+	public void closebrowser() {
+
+		// driver.close();
+
+	}
 
 }

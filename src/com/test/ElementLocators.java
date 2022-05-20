@@ -25,11 +25,11 @@ public class ElementLocators {
 	   
 		driver.manage().deleteAllCookies();
 		
-		driver.get("https://www.facebook.com/");
+		driver.get("http://magnus.jalaacademy.com");
 		
 		
-	}//9561620202  
-	//“http://dl.bintray.com/testng-team/testng-eclipse-release/
+	}  
+	
 	
 	
 	
@@ -37,11 +37,11 @@ public class ElementLocators {
 	@Test
 	public void locatortest() {
 		
-		driver.findElement(By.name("email")).sendKeys("ujjwal@gmil.com");
+		driver.findElement(By.name("UserName")).sendKeys("training@jalaacademy.com");
 		
-		driver.findElement(By.name("pass")).sendKeys("test@123");
+		driver.findElement(By.name("Password")).sendKeys("jobprogram");
 		
-		driver.findElement(By.name("login")).click();
+		driver.findElement(By.id("btnLogin")).click();
 		
 		
 		}

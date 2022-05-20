@@ -32,7 +32,7 @@ WebDriver driver;
 	
    @Test()
 	
-	public void windowhandle() throws InterruptedException {
+	public void frameHandle() throws InterruptedException {
 		
 		driver.findElement(By.id("UserName")).sendKeys("training@jalaacademy.com");
 		
@@ -50,25 +50,16 @@ WebDriver driver;
 	    
 	    Thread.sleep(1000);
 	    
-	    driver.switchTo().frame("iframe1");
-	    
-	    driver.findElement(By.className("navbar-toggler-icon")).click();
+	    driver.switchTo().frame("iframe2");
 	    
 	    Thread.sleep(2000);
 	    
-	    WebElement ele =   driver.findElement(By.id("navbarDropdown"));
 	    
-	  // driver.findElement(By.linkText("History")).click();      //not working with Select and Actions class
-	   
-	  // Select sel=new Select(ele);
-	   
-	  // sel.selectByVisibleText("History");
-	   
-	    
-	    ele.click();
+	    driver.findElement(By.xpath("//h1[contains(text(),'Welcome to Magnus')]")).click();
 	    
 	    
-	    driver.findElement(By.linkText("History")).click();
+	    
+	    
 	    
 	    
      }

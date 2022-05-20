@@ -21,7 +21,7 @@ public class LinkTestIII {
 	public void launchbrowser() {
 		
 
-		System.setProperty("webdriver.chrome.driver","C:\\C\\admin\\eclipse\\eclipse-java-2021-06-R-win32-x86_64\\chromedriver(1).exe");
+		System.setProperty("webdriver.chrome.driver","C:\\C\\admin\\eclipse\\eclipse-java-2021-06-R-win32-x86_64\\chromedriver(2).exe");
 		
 		 driver=new ChromeDriver();
 		
@@ -29,7 +29,7 @@ public class LinkTestIII {
 	   
 		driver.manage().deleteAllCookies();
 		
-		driver.get("https://testlink.org/");
+		driver.get("http://magnus.jalaacademy.com/Account/Login");
 		
 		
 	}  
@@ -38,17 +38,36 @@ public class LinkTestIII {
 	
 	
 	@Test
-	public void linktestt() {
+	public void linktestt() throws InterruptedException {
 		
 		
-		List<WebElement> links=driver.findElements(By.tagName("a"));
 		
 		//int a=links.size();
 		
 		//System.out.println(a);
 		
 		//for(int i=0;i<=links.size();i++) {
-			
+		
+		driver.findElement(By.id("UserName")).sendKeys("training@jalaacademy.com");
+
+		driver.findElement(By.name("Password")).sendKeys("jobprogram");
+
+		driver.findElement(By.id("btnLogin")).click();
+
+		Thread.sleep(2000);
+
+		driver.findElement(By.linkText("More")).click();
+
+		Thread.sleep(2000);
+
+		driver.findElement(By.linkText("Links")).click();
+		
+		Thread.sleep(2000);
+		
+		driver.findElement(By.partialLinkText("Working ")).click();
+		
+		List<WebElement> links=driver.findElements(By.tagName("a"));
+		
 			for(WebElement linkss:links) {
 				
 				System.out.println(linkss.getText());

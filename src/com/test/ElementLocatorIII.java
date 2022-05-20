@@ -26,7 +26,7 @@ public class ElementLocatorIII {
 	   
 		driver.manage().deleteAllCookies();
 		
-		driver.get("https://www.facebook.com/");
+		driver.get("http://magnus.jalaacademy.com");
 		
 		
 	}
@@ -35,11 +35,11 @@ public class ElementLocatorIII {
 	@Test
 	public void locatortest() {
 		
-		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("ujjwal2gmail.com");
+		driver.findElement(By.xpath("//input[@id='UserName']")).sendKeys("training@jalaacademy.com");
 		
-		driver.findElement(By.cssSelector("#pass")).sendKeys("test@123");
+		driver.findElement(By.cssSelector("#Password")).sendKeys("jobprogram");
 		
-		driver.findElement(By.className("_42ft _4jy0 _6lth _4jy6 _4jy1 selected _51sy")).click(); //failed bcoz class name is not unique
+		driver.findElement(By.xpath("//button[@type='button' and @class='btn btn-primary btn-flat']")).click(); 
 		
 		
 		}

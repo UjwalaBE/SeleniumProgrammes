@@ -27,24 +27,49 @@ public class DropDownIII {
 	   
 		driver.manage().deleteAllCookies();
 		
-		driver.get("https://theautomationzone.blogspot.com/2020/07/basic-dropdown.html");
+		 driver.get("http://magnus.jalaacademy.com/Account/Login");
+		
+
+		
 		
 		
 	}  
-	
+	          
 	
 	
 	
 	@Test
-	public void radioOp() {
+	public void radioOp() throws InterruptedException {
 		
 		
-		WebElement ele=	driver.findElement(By.id("mySelect"));
+		driver.findElement(By.id("UserName")).sendKeys("training@jalaacademy.com");
+
+		driver.findElement(By.name("Password")).sendKeys("jobprogram");
+
+		driver.findElement(By.id("btnLogin")).click();
 		
-		Select sel=new Select(ele);
+		Thread.sleep(2000);
 		
-		sel.selectByValue("orange");
 		
+		driver.findElement(By.linkText("More")).click();
+		  
+	    Thread.sleep(1000);
+	    
+	    driver.findElement(By.linkText("Menu")).click();
+	    Thread.sleep(1000);
+	    
+	    
+	    driver.findElement(By.linkText("Sub Menus")).click();
+	    
+	    Thread.sleep(1000);
+	  
+	    WebElement ele=  driver.findElement(By.linkText("Testing"));
+	    
+	    Select sel= new Select(ele);
+	    
+	    sel.selectByVisibleText("Selenium");
+	    
+	    
 		
 		
 		

@@ -17,7 +17,7 @@ public class WebElementOpIV {
 	public void launchbrowser() {
 		
 
-		System.setProperty("webdriver.chrome.driver","C:\\C\\admin\\eclipse\\eclipse-java-2021-06-R-win32-x86_64\\chromedriver(1).exe");
+		System.setProperty("webdriver.chrome.driver","C:\\C\\admin\\eclipse\\eclipse-java-2021-06-R-win32-x86_64\\chromedriver(2).exe");
 		
 		 driver=new ChromeDriver();
 		
@@ -25,7 +25,7 @@ public class WebElementOpIV {
 	   
 		driver.manage().deleteAllCookies();
 		
-		driver.get("https://www.facebook.com/");
+		driver.get("http://magnus.jalaacademy.com/");
 		
 		
 	}
@@ -34,11 +34,11 @@ public class WebElementOpIV {
 	@Test
 	public void locatortest() throws InterruptedException {
 		
-		driver.findElement(By.xpath("//input[@name='email']")).sendKeys("ujjwal@gmil.com");
+		driver.findElement(By.xpath("//input[@name='UserName']")).sendKeys("training@jalaacademy.com");
 		
 		Thread.sleep(5000);
 		
-		driver.findElement(By.xpath("//input[@name='email']")).clear();
+		driver.findElement(By.xpath("//input[@name='UserName']")).clear();
 		
 		
 		}
@@ -49,7 +49,7 @@ public class WebElementOpIV {
 	
 	public void closebrowser() {
 		 
-		driver.close();
+		//driver.close();
 		
 		
 	}
